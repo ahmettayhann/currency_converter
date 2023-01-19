@@ -1,0 +1,40 @@
+<%= render 'form', currency_pair: CurrencyPair.new %>
+<br><br><br>
+<div class="page-content">
+  <div class="row">
+    <div class="col-md-12">
+      <h3 class="page-title"> Currency Pairs </h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-9">
+      <div class="portlet box blue-ebonyclay">
+        <div class="portlet-body">
+          <div class="table-scrollable">
+            <div class="table-responsive">
+              <table class="table table-hover stripe hover row-border order-column">
+                <thead>
+                  <tr>
+                    <th>Base currency</th>
+                    <th>Compared currency</th>
+                    <th colspan="1"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <% @currency_pairs.each do |currency_pair| %>
+                    <tr>
+                      <% currency_calculation(currency_pair).each do |pair| %>
+                        <td><%= pair %></td>
+                      <% end %>
+                      <td><%= link_to 'Destroy', currency_pair, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                    </tr>
+                  <% end %>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

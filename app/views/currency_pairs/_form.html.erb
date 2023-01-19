@@ -1,0 +1,28 @@
+<h1>New Currency Pair</h1>
+<%= form_for currency_pair, html: { autocomplete: 'off', id: "carrier", class: "form-horizontal" } do |f| %>
+  <% if currency_pair.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(currency_pair.errors.count, "error") %> prohibited this currency_pair from being saved:</h2>
+
+      <ul>
+        <% currency_pair.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :base_currency_id %>
+    <%= f.select :base_currency_id, Currency.pluck(:name, :id), {}, {class: "rounded-md border border-gray-200"} %>
+  </div>
+
+  <div class="field">
+    <%= f.label :compared_currency_id %>
+    <%= f.select :compared_currency_id, Currency.pluck(:name, :id), {}, {class: "rounded-md border border-gray-200"} %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

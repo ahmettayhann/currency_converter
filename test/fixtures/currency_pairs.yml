@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  base_currency_id: 1
+  compared_currency_id: 1
+  compare_rate: 9.99
+  compared_at: 2023-01-19 09:33:28
+
+two:
+  base_currency_id: 1
+  compared_currency_id: 1
+  compare_rate: 9.99
+  compared_at: 2023-01-19 09:33:28
