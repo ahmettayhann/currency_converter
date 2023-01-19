@@ -5,9 +5,4 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
-# integration = FixerCurrencyIntegration.create(activation_date: Time.now)
-# integration.update(parameters_attributes: [{ name: 'base_url' },
-#                                            { value: 'https://api.apilayer.com/fixer' },
-#                                            { integration_id: integration.id }])
-# integration.save
+#

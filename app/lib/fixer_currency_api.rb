@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class FixerCurrencyApi
-  attr_reader :base_url, :api_key
 
   require "uri"
   require "net/http"
@@ -22,5 +21,4 @@ class FixerCurrencyApi
     response = https.request(request)
     response.body
   end
-
 end

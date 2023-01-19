@@ -29,20 +29,4 @@ ActiveRecord::Schema.define(version: 2023_01_19_063328) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  create_table "integration_parameters", force: :cascade do |t|
-    t.integer "integration_id"
-    t.string "name"
-    t.string "value"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
-  create_table "integrations", force: :cascade do |t|
-    t.string "name"
-    t.string "type"
-    t.datetime "activation_date"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
 end

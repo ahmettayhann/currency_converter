@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root 'currencies#index'
   resources :currency_pairs
   resources :currencies do
     get :get_current_rates, on: :collection

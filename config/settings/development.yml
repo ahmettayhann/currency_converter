@@ -4,9 +4,6 @@ currency_converter:
   host: http://localhost:3000
 redis:
   url: redis://127.0.0.1:6379/12
-sidekiq:
-  username: kobiks
-  password: wq1234
 fixer:
   api_key: rcD5wIJKZZ3a9HVT6uKAyVVMI5gzg4po
   base_url: https://api.apilayer.com/fixer

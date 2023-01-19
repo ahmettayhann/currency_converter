@@ -8,8 +8,7 @@ module ApplicationService
       new(*args, &block).call
     end
 
-    def initialize(*)
-    end
+    def initialize(*); end
   end
 
   class Error

@@ -1,12 +1,11 @@
 # frozen_string_literal: true
-
-class FixerCurrencyIntegration < Integration
+# Currency service
+class CurrencyService
   attr_reader :base_url, :api_key
 
-  after_initialize :init, if: :new_record?
-
-  def init
-    self.name = 'FixerCurrency'
+  def initialize(base_url, api_key)
+    @base_url = base_url
+    @api_key = api_key
   end
 
   def get_currencies_rates(start_date, end_date, base)
@@ -17,6 +16,8 @@ class FixerCurrencyIntegration < Integration
     currencies_infos = parsed_response['rates']
     update_currencies(currencies_infos, end_date, base)
   end
+
+  private
 
   def update_currencies(currencies_infos, end_date, base)
     currencies_infos.each do |currencies_info|
@@ -33,15 +34,5 @@ class FixerCurrencyIntegration < Integration
 
   def api
     @_api = FixerCurrencyApi.new(base_url, api_key)
-  end
-
-  private
-
-  def base_url
-    @base_url = parameters.find_by(name:'base_url')&.value
-  end
-
-  def api_key
-    @api_key = parameters.find_by(name: 'api_key')&.value
   end
 end

@@ -1,24 +1,25 @@
 # README
 
+First of all run the app
+
+
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
 Things you may want to cover:
 
-* Ruby version
+* Ruby version 2.7.6
 
-* System dependencies
+* Rails version 6.1.7
 
-* Configuration
+* DB Engine SQlite
 
-* Database creation
+* After download project:
+* Run 'rails start' to start server
+* Run 'bundle exec sidekiq' to get currencies
 
-* Database initialization
+* Enter 'http://localhost:3000/' page to see all currencies list
+* With "Get Current Currencies" button, can get all current rates
+* With "Pair Currency" button to can open pair page to pair selected currencies and list all of them
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+There is no test for this app

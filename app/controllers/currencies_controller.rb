@@ -7,7 +7,7 @@ class CurrenciesController < ApplicationController
   end
 
   def get_current_rates
-    GetCurrenciesRatesJob.perform_now(params[:start_date], params[:end_date], params[:base])
+    GetCurrenciesRatesJob.perform_later(params[:start_date], params[:end_date], params[:base])
     respond_to do |format|
       format.html { redirect_to currencies_url, notice: "Currency pair was successfully created." }
     end
