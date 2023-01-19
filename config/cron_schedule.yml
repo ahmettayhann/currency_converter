@@ -1,6 +1,6 @@
 # config/schedule.yml
 get_currencies_rates_cron_job:
-  cron: "* * * * *"
+  cron: "*/10 * * * *"
   class: "GetCurrenciesRatesCronJob"
   active_job: 'true'
   queue_name_prefix: <%= "#{Rails.env}" %>
